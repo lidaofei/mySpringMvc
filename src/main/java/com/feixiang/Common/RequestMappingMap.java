@@ -3,6 +3,10 @@ package com.feixiang.Common;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * @Author: lidaofei
+ * @Date: 2019/3/17 20:58
+ */
 public class RequestMappingMap {
     private static Map<String,Class> reqMappingMap = new HashMap<String, Class>();
     public static  Map<String,Class> getReqMappingMap(){
