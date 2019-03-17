@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1" xmlns:javaee="http://java.sun.com/xml/ns/j2ee">
+
+    <javaee:display-name>Archetype Created Web Application</javaee:display-name>
+    <servlet>
+        <servlet-name>dispatcherServlet</servlet-name>
+        <servlet-class>com.feixiang.handler.DispatcherServlet</servlet-class>
+        <init-param>
+            <description>配置要扫描包及其子包, 如果有多个包,以逗号分隔</description>
+            <param-name>scanPackage</param-name>
+            <param-value>com.feixiang.controller</param-value>
+        </init-param>
+        <init-param>
+            <description>converter</description>
+            <param-name>java.math.BigDecimal</param-name>
+            <param-value>com.feixiang.converter.MyBigdecimalConverter</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>dispatcherServlet</servlet-name>
+        <!-- 拦截所有以.do后缀结尾的请求 -->
+        <url-pattern>*.do</url-pattern>
+    </servlet-mapping>
+
+</web-app>
